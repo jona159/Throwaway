@@ -260,6 +260,7 @@ def test_startFromID_success(app):
 def test_startFromID_failure(app):
     pass
 '''
+'''
 def test_getJobFromId_success(app):
     
     client = app.test_client()
@@ -268,12 +269,12 @@ def test_getJobFromId_success(app):
     response = client.get(url)
     assert response.content_type == 'application/json'
     assert response.is_json == True
-    '''
+    
     assert b'id' in response.data
     assert b'title' in response.data
     assert b'process' in response.data
     assert b'status' in response.data
-    '''
+    
     # assert response.get_json()["id"] == "string"
 
 
@@ -291,7 +292,7 @@ def test_getJobFromId_failure(app):
     assert b'process' not in response.data
     assert b'status' not in response.data
     # assert response.get_json()["id"] != "string"
-'''
+
 def test_postData_success(app):
     pass
 def test_postData_failure(app):
