@@ -19,7 +19,7 @@ def test_default_route_success(app):
 
         response = client.get(url)
         assert response.content_type == 'application/json'
-        assert response.is_json == True
+        assert response.is_json == False
 
         assert b'api_version' in response.data
         assert b'backend_version' in response.data
